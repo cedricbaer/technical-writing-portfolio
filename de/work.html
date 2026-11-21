@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projekte | Cédric Baer — Technischer Redakteur</title>
+<meta name="description" content="Portfolio von Cédric Baer: Installationshandbücher, Softwaredokumentation, DITA-Migration, Dokumentationsstandards und Konsumgüter-Dokumentation.">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap");
+:root{
+ --ink:#1c2230; --slate:#3d4a5c; --border:#b7c3d0; --cloud:#eef2f6; --clay:#c46a5a;
+ --white:#ffffff; --muted:#5f6b79; --max:1180px; --r:24px;
+ --font-ui:"IBM Plex Sans",Arial,sans-serif; --font-body:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cloud);color:var(--ink);font-family:var(--font-body);line-height:1.58}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(238,242,246,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--font-ui);font-weight:700;letter-spacing:-.04em;font-size:1.08rem;color:var(--ink)}
+.brand i{font-style:normal;color:var(--clay)}
+nav,.site-nav{display:flex;gap:30px;align-items:center;font-family:var(--font-ui);font-size:.82rem;font-weight:600;letter-spacing:.055em}
+.site-nav a{position:relative;color:var(--slate);transition:color .18s ease,transform .18s ease}
+.site-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--clay);transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
+.site-nav a:hover{color:var(--ink);transform:translateY(-1px)}.site-nav a:hover::after{transform:scaleX(1)}
+.menu{display:none;border:1px solid var(--border);background:var(--cloud);color:var(--ink);border-radius:10px;padding:6px 10px;font-size:1.25rem}
+.hero{padding:95px 0 80px;position:relative;overflow:hidden;background:var(--cloud)}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:var(--border);right:-170px;top:25px;z-index:0;opacity:.28}
+.hero .container{position:relative;z-index:1}
+.eyebrow,.num,.tag,.label,.btn,.pdf,button{font-family:var(--font-ui)}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--clay);margin-bottom:18px}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-ui);color:var(--ink)}
+h1{font-size:clamp(4rem,10vw,8.7rem);line-height:.83;letter-spacing:-.075em;max-width:1000px;margin:0 0 34px}
+.hero .intro{font-size:1.25rem;max-width:720px;color:var(--slate)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn,.button-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1.5px solid var(--slate);border-radius:999px;font-weight:600;font-size:.88rem;transition:transform .18s ease,background-color .18s ease,color .18s ease,box-shadow .18s ease,border-color .18s ease}
+.btn:hover,.button-primary:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(28,34,48,.10)}
+.btn.dark,.btn.blue,.button-primary{background:var(--clay);color:#fff;border-color:var(--clay)}
+.btn.dark:hover,.btn.blue:hover,.button-primary:hover{background:#ad594b;border-color:#ad594b}
+.btn.light{background:transparent;color:var(--ink);border-color:var(--border)}.btn.light:hover{background:#fff;border-color:var(--slate)}
+.section{padding:86px 0;background:var(--cloud)}
+.section:nth-of-type(even){background:#fff}
+.section.dark{background:var(--ink);color:var(--cloud)}
+.section.dark h1,.section.dark h2,.section.dark h3,.section.dark h4,.section.dark .statement{color:var(--cloud)}
+.section.blue{background:var(--cloud);color:var(--ink)}
+.head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:38px}
+h2{font-size:clamp(2.6rem,6vw,5.2rem);letter-spacing:-.065em;line-height:.92;margin:0}
+.head p{max-width:520px;color:var(--slate);margin:0}.dark .head p{color:var(--border)}
+.workgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.workcard{grid-column:span 6;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.workcard:nth-child(3){grid-column:span 5}.workcard:nth-child(4){grid-column:span 7}
+.workcard:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(28,34,48,.09);border-color:var(--slate)}
+.visual{height:270px;background:var(--cloud);position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.visual img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .24s ease}.workcard:hover .visual img{transform:scale(1.015)}
+.workbody{padding:26px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:6px 8px;border-radius:99px;background:var(--cloud);color:var(--slate);border:1px solid var(--border)}
+.workbody h3{font-size:1.55rem;letter-spacing:-.04em;margin:13px 0 7px}.workbody p{color:var(--slate);margin:0 0 18px}.arrow{font-family:var(--font-ui);font-weight:600;color:var(--clay)}
+.statement{font-family:var(--font-ui);font-size:clamp(2.4rem,6vw,5.6rem);line-height:.95;letter-spacing:-.065em;max-width:1050px}.statement em{color:var(--clay);font-style:normal}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}.pillar{border-top:1px solid var(--slate);padding-top:18px}.pillar b{font-family:var(--font-ui);display:block;font-size:1.05rem}.pillar span{display:block;color:var(--border);font-size:.88rem;margin-top:7px}
+.case{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;padding:65px 0;border-top:1px solid var(--border);align-items:start}.case:first-child{border-top:0}
+.case h3{font-size:2.8rem;letter-spacing:-.055em;line-height:1;margin:9px 0 17px}.case p{color:var(--slate);max-width:610px}.num{font-weight:700;color:var(--clay);font-size:.72rem;letter-spacing:.16em}
+.casepanel{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;box-shadow:0 6px 18px rgba(28,34,48,.045);align-self:start;height:fit-content}.casepanel h4{margin:0 0 14px;font-family:var(--font-ui);font-size:.78rem;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}.casepanel ul{margin:0;padding-left:18px;color:var(--slate)}.casepanel li{margin:0 0 10px}.casepanel li:last-child{margin-bottom:0}
+.sample-preview{margin-top:22px;background:#fff;border:1px solid var(--border);border-radius:15px;overflow:hidden;box-shadow:0 6px 18px rgba(28,34,48,.045)}
+.sample-preview a{display:block}
+.sample-preview img{display:block;width:100%;height:auto;transition:transform .24s ease}
+.sample-preview:hover img{transform:scale(1.008)}
+.sample-caption{padding:12px 15px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:.76rem;color:var(--slate);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.sample-caption b{color:var(--ink)}
+.pdfbox{margin-top:22px;padding:18px;background:#fff;border:1px solid var(--border);border-radius:15px;display:flex;justify-content:space-between;gap:15px;align-items:center}.pdfbox small{color:var(--slate);display:block}.pdf{font-weight:700;color:var(--clay);white-space:nowrap}.pdf:hover{text-decoration:underline}
+.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:90px}.aboutgrid p{font-size:1.08rem}.quote{font-size:2rem;line-height:1.08;letter-spacing:-.04em;border-left:5px solid var(--clay);padding-left:24px}
+.timeline{margin-top:45px}.trow{display:grid;grid-template-columns:190px 1fr;gap:35px;border-top:1px solid var(--border);padding:22px 0}.trow .label{font-weight:700;color:var(--clay)}.trow h3{margin:0 0 4px;font-size:1.2rem}.trow p{margin:0;color:var(--slate)}
+.contactbox{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.contactbox h2{max-width:850px}.contactbox p{color:var(--slate);max-width:650px;font-size:1.12rem}.section.dark .contactbox p{color:var(--border)}
+footer{padding:28px 0;font-size:.8rem;color:var(--slate);border-top:1px solid var(--border);background:var(--cloud)}.foot{display:flex;justify-content:space-between}
+@media(max-width:800px){nav,.site-nav{display:none}.menu{display:block}.hero{padding:70px 0}.hero:after{width:230px;height:230px;right:-120px}.workgrid{display:block}.workcard{margin-bottom:18px}.pillars{grid-template-columns:1fr 1fr}.case,.aboutgrid,.contactbox{grid-template-columns:1fr;gap:30px}.trow{grid-template-columns:1fr;gap:5px}}
+
+:root{--clay-text:#a4493a}
+.eyebrow,.num,.trow .label,.arrow,.pdf{color:var(--clay-text)}
+.section.dark .eyebrow,.section.dark .num{color:var(--border)}
+.eyebrow,.num{font-size:.78rem}.tag{font-size:.75rem}
+.btn.dark,.btn.blue,.button-primary{background:#ad594b;border-color:#ad594b}
+.btn.dark:hover,.btn.blue:hover,.button-primary:hover{background:#94483b;border-color:#94483b}
+h1{font-size:clamp(3rem,8vw,6rem);line-height:.9}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+@media(max-width:800px){header .site-nav.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:16px;padding:20px 22px;background:var(--cloud);border-bottom:1px solid var(--border)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.casepanel{position:sticky;top:104px}
+@media(max-width:800px){.casepanel{position:static}}
+.lang{display:inline-flex;gap:4px;margin-left:12px;padding-left:16px;border-left:1px solid var(--border)}
+.lang a{padding:3px 9px;border-radius:999px;font-size:.72rem}
+.lang a.on{background:var(--ink);color:#fff}
+@media(max-width:800px){.lang{border:0;margin:0;padding:0}}
+h1,h2,h3,p,a{overflow-wrap:break-word;hyphens:auto}
+.tag{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+.head{flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><div class="container nav"><a class="brand" href="index.html">Cédric <i>Baer</i></a>
+<nav class="site-nav">
+<a href="about.html">ÜBER MICH</a>
+<a href="work.html">PROJEKTE</a>
+<a href="experience.html">WERDEGANG</a>
+<a href="contact.html">KONTAKT</a>
+<span class="lang"><a href="../work.html" hreflang="en" lang="en">EN</a><a href="../fr/work.html" hreflang="fr" lang="fr">FR</a><a class="on" aria-current="true" href="work.html" hreflang="de" lang="de">DE</a></span></nav>
+<button class="menu" aria-label="Menu" aria-expanded="false" onclick="var n=document.querySelector('.site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button></div></header>
+
+<main>
+<section class="hero"><div class="container"><div class="eyebrow">AUSGEWÄHLTE PROJEKTE</div><h1>Echte Projekte<br>und das Denken dahinter.</h1><p class="intro">Echte Projektbeispiele, bei Bedarf anonymisiert, sowie kurze Beispiele dafür, wie ich Struktur, Stil und Migration angehe. Die PDF-Dokumente sind auf Englisch.</p></div></section>
+<section class="section"><div class="container">
+
+<div class="case" id="treatment-guide"><div><div class="num">01 / KONSUMGÜTER-DOKUMENTATION</div><h2>Usage Guide — Body &amp; Face Treatment Device</h2><p>Ein Faltblatt, das einem Behandlungsgerät für Verbraucher beiliegt, damit Nutzer es selbstständig bedienen können.</p><div class="tags"><span class="tag">BENUTZERHANDBUCH</span><span class="tag">KONSUMGÜTER</span><span class="tag">PRAKTISCHE TESTS</span></div><div class="sample-preview"><a href="../assets/body-face-treatment-usage-guide.png" target="_blank"><img src="../assets/body-face-treatment-usage-guide.png" alt="French usage guide showing body and face treatment gestures for a consumer treatment device"></a><div class="sample-caption"><b>Echtes Projekt</b><span>Anwendungstipps · Französischer Quelltext · ÖFFNEN ↗</span></div></div></div><div class="casepanel"><h4>Herausforderung, Rolle, Vorgehen, Ergebnis</h4><ul><li><b>Herausforderung:</b> Nutzer mussten die Behandlungsgesten, Bewegungsmuster und Bildschirmbedienung eines Geräts mit austauschbaren Körper- und Gesichtsaufsätzen ohne Trainer beherrschen.</li><li><b>Rolle:</b> Autor des französischen Quellhandbuchs, vom Kick-off vor Ort bis zu den letzten Korrekturen. Die Lokalisierung durch den Kunden lag außerhalb meines Verantwortungsbereichs.</li><li><b>Vorgehen:</b> Ich habe das Gerät durch eigene Nutzung kennengelernt, technische Details mit dem Ingenieur abgestimmt und das Handbuch in mehreren Review-Runden des Kunden verfeinert.</li><li><b>Ergebnis:</b> Das Handbuch wurde als Faltblatt gedruckt und der Produktverpackung beigelegt, sodass Nutzer das Gerät selbstständig bedienen können.</li></ul></div></div>
+
+<div class="case" id="installation"><div><div class="num">02 / VERFAHRENSDOKUMENTATION</div><h2>Installation Guide</h2><p>Ein Handbuch für Installation, Bereitstellung und Lizenzierung für zwei Zielgruppen: Endnutzer und Administratoren. Es behandelt Voraussetzungen, Installation am Arbeitsplatz und per Kommandozeile, Netzwerkbereitstellung, Konfiguration und Fehlerbehebung.</p><div class="tags"><span class="tag">INSTALLATION</span><span class="tag">BEREITSTELLUNG</span><span class="tag">LIZENZIERUNG</span><span class="tag">FEHLERBEHEBUNG</span></div><div class="sample-preview"><img src="../assets/installation-guide-preview.png" alt="Preview of the first page of the Installation Guide" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Anonymisiertes Beispiel · erste Seite</span></div></div><div class="pdfbox"><div><b>Anonymisiertes PDF-Beispiel</b><small>Installation Guide · 70 Seiten</small></div><a class="pdf" href="../samples/installation-guide.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Herausforderung, Rolle, Vorgehen, Ergebnis</h4><ul><li><b>Herausforderung:</b> Endnutzer, die selbst installieren, und Administratoren, die in großem Maßstab bereitstellen, brauchten ein verlässliches Handbuch zu Installation, Lizenzierung, Konfiguration und Fehlerbehebung.</li><li><b>Rolle:</b> Autor des gesamten Handbuchs, von der Planung bis zum getaggten Release.</li><li><b>Vorgehen:</b> Ich habe es nach Aufgaben strukturiert (planen, installieren, lizenzieren, konfigurieren, Fehler beheben) und bekannte Probleme von Entwicklern, Support-Ingenieuren und Lizenzadministratoren gesammelt. Jede Prozedur habe ich auf einem sauberen Rechner getestet und Schrittfolge, Voraussetzungen und UI-Bezeichnungen korrigiert. Ich verwendete nummerierte Schritte, standardisierte Hinweis-/Vorsicht-/Warnungs-Kästen, Tabellen und Codeblöcke und prüfte Änderungen mit Fachexperten und Kollegen über Merge Requests pro Änderung.</li><li><b>Ergebnis:</b> Nach mehreren Review-Zyklen und einer Konsistenzprüfung ermöglicht das Handbuch Nutzern die eigenständige Installation und Administratoren die Bereitstellung in großem Maßstab.</li></ul></div></div>
+
+<div class="case" id="github-review"><div><div class="num">03 / WORKFLOW-DOKUMENTATION</div><h2>GitHub Review Procedure</h2><p>Eine interne Anleitung, die Reviewer Schritt für Schritt durch das Prüfen von Dokumentationsänderungen in GitHub, das Abgeben von Kommentaren und Vorschlägen, das erneute Prüfen aktualisierter Inhalte und das Freigeben von Pull Requests führt.</p><div class="tags"><span class="tag">GITHUB</span><span class="tag">REVIEW-WORKFLOW</span><span class="tag">DOCS-AS-CODE</span></div><div class="sample-preview"><img src="../assets/github-review-procedure-preview.png" alt="Preview of the GitHub review procedure" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Echtes Projekt · erste Seite</span></div></div><div class="pdfbox"><div><b>Echtes Projekt</b><small>GitHub review procedure · 1 Seite</small></div><a class="pdf" href="../samples/github-review-procedure.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Herausforderung, Rolle, Vorgehen, Ergebnis</h4><ul><li><b>Herausforderung:</b> Reviewer im Team brauchten einen einheitlichen Weg, Dokumentationsänderungen in GitHub zu prüfen, Kommentare und Vorschläge abzugeben und Pull Requests freizugeben.</li><li><b>Rolle:</b> Ich habe diese Anleitung für das Technical-Documentation-Team von Elektrobit erstellt und gepflegt. Es ist ein internes Firmendokument, speziell für Elektrobit entwickelt.</li><li><b>Vorgehen:</b> Ich habe sie in nummerierten, aufgabenorientierten Schritten geschrieben, die den Reviewer vom Pull-Request-Link in der GitHub-E-Mail bis zur Freigabe begleiten. Die Schritte umfassen Kommentare, Änderungsvorschläge, die erneute Prüfung aktualisierter Inhalte mit „Show changes since your last review“ und die abschließende Checkliste in Jira.</li><li><b>Ergebnis:</b> Eine einseitige Schritt-für-Schritt-Anleitung, die einheitliche Review-Workflows im Team unterstützt.</li></ul></div></div>
+
+<div class="case" id="vx720-user-guide"><div><div class="num">04 / TELEKOMMUNIKATIONS-DOKUMENTATION</div><h2>VX-720 Cordless Phone User Guide</h2><p>Ein vollständiges Benutzerhandbuch für ein schnurloses Telefon an einem Business-Kommunikationssystem: Funktionen, Installation und Fehlerbehebung.</p><div class="tags"><span class="tag">BENUTZERHANDBUCH</span><span class="tag">TELEKOMMUNIKATION</span><span class="tag">FEHLERBEHEBUNG</span></div><div class="sample-preview"><img src="../assets/veltrix-vx720-user-guide-preview.png" alt="Preview of the VX-720 Cordless Phone User Guide" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Anonymisiertes Beispiel · erste Seite</span></div></div><div class="pdfbox"><div><b>Anonymisiertes PDF-Beispiel</b><small>User Guide · 103 Seiten</small></div><a class="pdf" href="../samples/veltrix-vx720-user-guide.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Herausforderung, Rolle, Vorgehen, Ergebnis</h4><ul><li><b>Herausforderung:</b> 2008 wirkte ich bei einem meiner ersten technischen Dokumentationsprojekte für ein großes schwedisches Telekommunikationsunternehmen mit. Es ging darum, ein schnurloses Telefon zu dokumentieren und ein umfassendes Benutzerhandbuch in einem für mich relativ neuen Fachgebiet zu entwickeln.</li><li><b>Rolle:</b> Ich war für das Schreiben des gesamten Benutzerhandbuchs verantwortlich: Funktionen des Telefons, Installation und Fehlerbehebung.</li><li><b>Vorgehen:</b> Ich arbeitete eng mit Fachexperten (SMEs) zusammen, um das Produkt zu verstehen und technische Informationen zu überprüfen. Ich testete die Funktionen des Telefons selbst, um praktische Erfahrung zu sammeln und genaue, praxistaugliche Anleitungen sicherzustellen. Außerdem holte ich Rat und Feedback erfahrener technischer Redakteure ein.</li><li><b>Ergebnis:</b> Ich lieferte ein umfassendes, nutzerorientiertes Handbuch zu den wichtigsten Funktionen, Installationsverfahren und zur Fehlerbehebung. Das Projekt stärkte meine Fähigkeiten in der technischen Dokumentation und gab mir wertvolle Erfahrung in der Telekommunikationsdokumentation, und prägte meinen Ansatz für klare, verlässliche Benutzerdokumentation.</li></ul></div></div>
+
+<div class="case" id="guide"><div><div class="num">05 / SOFTWARE-DOKUMENTATION</div><h2>System Administration Guide</h2><p>Ein fiktives Handbuch für Administratoren, die eine Unternehmensplattform konfigurieren. Es zeigt aufgabenorientierte Struktur, Voraussetzungen, klare Verfahren und erwartete Ergebnisse.</p><div class="tags"><span class="tag">AUFGABENORIENTIERT</span><span class="tag">BENUTZERHANDBUCH</span><span class="tag">TERMINOLOGIE</span></div><div class="sample-preview"><img src="../assets/system-administration-guide-preview.png" alt="Preview of the first page of the System Administration Guide" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Fiktives Beispiel · erste Seite</span></div></div><div class="pdfbox"><div><b>Fiktives PDF-Beispiel</b><small>System Administration Guide · 8 Seiten</small></div><a class="pdf" href="../samples/system-administration-guide.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Was dieses Beispiel zeigt</h4><ul><li>Klare Aufgabentitel und Nutzerziele</li><li>Logische Reihenfolge und Voraussetzungen</li><li>Prägnante Anweisungen und erwartete Ergebnisse</li><li>Einheitliche Terminologie</li><li>Inhalte, die zum Überfliegen statt zum linearen Lesen gestaltet sind</li></ul></div></div>
+
+<div class="case" id="dita"><div><div class="num">06 / STRUKTURIERTES SCHREIBEN</div><h2>From legacy content to DITA</h2><p>Eine fiktive Fallstudie dazu, wie ich eine große Menge unstrukturierter Dokumente analysieren, modellieren und in wiederverwendbare, themenbasierte Inhalte migrieren würde.</p><div class="tags"><span class="tag">DITA</span><span class="tag">CONTENT-MODELL</span><span class="tag">MIGRATION</span></div><div class="sample-preview"><img src="../assets/dita-migration-case-study-preview.png" alt="Preview of the first page of the DITA migration case study" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Fiktives Beispiel · erste Seite</span></div></div><div class="pdfbox"><div><b>Fiktives PDF-Beispiel</b><small>Migrations-Fallstudie · 5 Seiten</small></div><a class="pdf" href="../samples/dita-migration-case-study.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Was dieses Beispiel zeigt</h4><ul><li>Inhaltsanalyse vor der Werkzeugauswahl</li><li>Themenbasierte Informationsarchitektur</li><li>Wiederverwendung und Governance</li><li>Migrationsstrategie und schrittweise Umsetzung</li><li>Dokumentation als System behandelt, nicht als Dateihaufen</li></ul></div></div>
+
+<div class="case" id="style"><div><div class="num">07 / INHALTSQUALITÄT</div><h2>Documentation Style Guide</h2><p>Ein fiktiver interner Leitfaden, der einheitliche Konventionen für Terminologie, Stil und Verfahren für Redakteure und Ingenieure festlegt.</p><div class="tags"><span class="tag">STIL</span><span class="tag">TERMINOLOGIE</span><span class="tag">QUALITÄT</span></div><div class="sample-preview"><img src="../assets/documentation-style-guide-preview.png" alt="Preview of the first page of the Documentation Style Guide" loading="lazy"><div class="sample-caption"><b>Dokumentvorschau</b><span>Fiktives Beispiel · erste Seite</span></div></div><div class="pdfbox"><div><b>Fiktives PDF-Beispiel</b><small>Stilleitfaden · 4 Seiten</small></div><a class="pdf" href="../samples/documentation-style-guide.pdf" target="_blank">PDF ÖFFNEN ↗</a></div></div><div class="casepanel"><h4>Was dieses Beispiel zeigt</h4><ul><li>Praktische Regeln statt abstrakter Prinzipien</li><li>Terminologiemanagement</li><li>Beispiele, die Redakteure sofort anwenden können</li><li>Konsistenz über Teams und Dokumente hinweg</li></ul></div></div>
+
+
+</div></section>
+<section class="section dark"><div class="container"><div class="eyebrow" style="color:#b7c3d0">EIN HINWEIS ZUR VERTRAULICHKEIT</div><p class="statement">Ein großer Teil meiner Arbeit unterliegt einer NDA. <em>Deshalb zeige ich die Methode.</em></p><div class="head" style="margin-top:35px"><p>Die Beispiele sind anonymisiert oder neu erstellt. In jedem Fall zeige ich Zielgruppe, meine Rolle, den Prozess und das Ergebnis, damit Sie beurteilen können, wie ich arbeite.</p></div></div></section>
+</main>
+
+<footer><div class="container foot"><span>© 2026 Cédric Baer</span><span>Technische Dokumentation · Content-Strategie</span></div></footer>
+</body></html>
